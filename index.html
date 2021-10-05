@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap"
+    rel="stylesheet">
+
+  <title>Frontend Mentor | Stats preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      font-size: 100%;
+      vertical-align: baseline;
+      background: transparent;
+
+      /* include border and padding in element width and height */
+      box-sizing: border-box;
+
+      font-family: 'Red Hat Display', serif;
+      font-size: 16px;
+    }
+
+    /* use viewport-relative units to cover page fully */
+    body {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    @media screen and (min-width: 980px) {
+      .container {
+        width: 1110px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .container .hero {
+        width: 50%;
+        border-radius: 0 5px 5px 0;
+      }
+
+      .container .info {
+        width: 50%;
+        border-radius: 5px 0 0 5px;
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+      }
+
+      .container .info p {
+        text-align: left;
+      }
+
+      .container .info ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+
+
+      .container .info ul p {
+        text-align: center;
+      }
+
+      .container .hero img {
+        border-radius: 0 5px 5px 0;
+      }
+
+      .after {
+        border-radius: 0 5px 5px 0;
+      }
+    }
+
+    @media screen and (max-width: 980px) {
+      .container {
+        width: 60%;
+        margin: 2rem auto;
+        text-align: center;
+      }
+
+      .container .info {
+        width: 80%;
+        border-radius: 5px 0 0 5px;
+        padding: 2rem;
+      }
+
+      .container .hero img {
+        border-radius: 10px 10px 0 0;
+      }
+
+      .after {
+        border-radius: 10px 10px 0 0;
+      }
+
+    }
+
+    :root {
+      --veryDarkBlue: hsl(233, 47%, 7%);
+      --darkDesaturatedBlue: hsl(244, 38%, 16%);
+      --softViolet: hsl(277, 64%, 61%);
+      /* (main heading, stats) */
+      --white: hsl(0, 0%, 100%);
+      /* (main paragraph) */
+      --slightlyTransparentWhite: hsla(0, 0%, 100%, 0.75);
+      /* (stat headings) */
+      --slightlyTransparentWhite: hsla(0, 0%, 100%, 0.6);
+
+      --fontInter: 'Inter', sans-serif;
+      --fontDeca: 'Lexend Deca', sans-serif;
+
+      --fontWeight400: 400;
+      --fontWeight700: 700;
+    }
+
+    .wrapper {
+      display: flex;
+      background-color: var(--veryDarkBlue);
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .container .hero {
+      position: relative;
+      height: auto;
+      background-color: transparent;
+    }
+
+    .after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--softViolet);
+      opacity: 0.55;
+    }
+
+    .container .hero img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container .info {
+      background-color: var(--darkDesaturatedBlue);
+    }
+
+    .container .info h1 {
+      color: var(--white);
+      font-family: var(--fontInter);
+      font-size: 24pt;
+      text-align: center;
+    }
+
+    .container .info h1 span {
+      color: var(--softViolet);
+      font-family: var(--fontInter);
+      font-size: 28pt;
+    }
+
+    .container .info p {
+      color: var(--slightlyTransparentWhite);
+      font-family: var(--fontDeca);
+      padding: 1rem 0;
+      font-size: 0.8rem;
+    }
+
+    .container .info h2 {
+      color: var(--white);
+      font-family: var(--fontInter);
+    }
+
+    .container .info ul {
+      list-style-type: none;
+      /* Remove bullets */
+      padding: 0;
+      /* Remove padding */
+      margin: 0;
+      /* Remove margins */
+      text-transform: uppercase;
+    }
+
+    .container .info ul li {
+      padding: 10px 0;
+    }
+
+    .container .info ul p {
+      padding: 5px 0 0 0;
+      font-size: 0.8rem;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <main class="container">
+      <div class="hero">
+        <img src="./images/image-header-mobile.jpg" alt='hero' />
+        <div class="after"></div>
+      </div>
+      <div class="info">
+        <h1>Get <span>insights</span> that help your business grow.</h1>
+        <p>Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and
+          overall efficiency.</p>
+        <ul>
+          <li>
+            <h2>10k+</h2>
+            <p>companies</p>
+          </li>
+          <li>
+            <h2>314</h2>
+            <p>templates</p>
+          </li>
+          <li>
+            <h2>12M+</h2>
+            <p>queries</p>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+</body>
+
+</html>
